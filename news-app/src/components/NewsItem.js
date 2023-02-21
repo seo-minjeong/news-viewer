@@ -18,14 +18,22 @@ const NewsItemBlock = styled.div`
     h2 {
       margin: 0;
       a {
+        font-size: 20px;
         color: black;
       }
     }
     p {
       margin: 0;
       line-height: 1.5;
+      font-size: 15px;
       margin-top: 0.5rem;
-      white-space: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // 원하는 라인수
+      -webkit-box-orient: vertical;
     }
   }
   & + & {
@@ -45,7 +53,7 @@ const NewsItem = ({ article }) => {
         </div>
       )}
 
-      <div className="Contents">
+      <div className="contents">
         <h2>
           <a href={url} target="_blank" rel="noopener noreferrer">
             {title}
